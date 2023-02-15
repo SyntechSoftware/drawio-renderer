@@ -4,7 +4,7 @@ stages:
 build_job:
     stage: build
     script:
-        - ssh cirunner@airbot.syntech.info 'sudo git -C /root/aristiun-xml-renderer/ pull origin develop'
+        - ssh cirunner@airbot.syntech.info 'sudo git -C /root/aristiun-xml-renderer/ pull origin master'
         - ssh cirunner@airbot.syntech.info 'sudo docker-compose -f /root/docker-compose.yml up -d --build xml-renderer'
     only:
         - develop
